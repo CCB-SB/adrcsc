@@ -1,0 +1,38 @@
+train_seurat_obj:
+  "/home/twolff/ZEBRA/ADRC_revision/data/ZEBRA_female_train_v3.rds"
+
+test_seurat_obj:
+  "/home/twolff/ZEBRA/ADRC_revision/data/Blanchard_female_v3.rds"
+
+annotation_column:
+  "sub_cell_type"
+
+donor_column:
+  "donor"
+
+class_column:
+  "condition"
+
+positive_class:
+  "AD"
+
+celltypes:
+  Astrocyte:
+    name: "Astrocyte 2"
+  Microglia:
+    name: "Microglia"
+  OPC:
+    name: "OPC"
+  Oligodendrocyte:
+    name: "Oligodendrocyte 1"
+  Excitatory_neuron4:
+    name: "Excitatory neuron 4"
+  Excitatory_neuron5:
+    name: "Excitatory neuron 5"
+  Inhibitory_neuron1:
+    name: "Inhibitory neuron 1"
+  Inhibitory_neuron2:
+    name: "Inhibitory neuron 2"
+
+scDeepFeatures:
+  "/local/twolff/scGeneRanger/scDeepFeatures/Utils/Feature_selection_methods/Mlp/main.py"

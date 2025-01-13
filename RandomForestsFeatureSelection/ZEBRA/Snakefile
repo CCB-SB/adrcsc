@@ -1,0 +1,166 @@
+configfile: "config.yaml"
+
+rule all:
+	input:
+		expand("results/{celltype}/selected_genes_and_performance.csv", celltype = config["celltypes"]),
+		expand("data/{celltype}/data_for_scDeepFeatures.h5", celltype = config["celltypes"]),
+		expand("results/{celltype}/DeepLift_features_and_performance.csv", celltype = config["celltypes"]),
+		expand("results/{celltype}/FeatureAblation_features_and_performance.csv", celltype = config["celltypes"]),
+		"results/method_performance_comparison_F1.png",
+		"results/method_performance_comparison_results_with_optimal_k.csv"
+
+
+rule scgeneranger:
+	input:
+		config["train_seurat_obj"],
+		config["test_seurat_obj"]
+	output:
+		fold_indices = "data/{celltype}/fold_indices.RData",
+		data_split = "data/{celltype}/data_split.RData",
+		results = "results/{celltype}/selected_genes_and_performance.csv",
+		model = "results/{celltype}/scgeneranger_model.RData",
+		cv_results = "results/{celltype}/subset_cv_results.png",
+		patient_level_predictions = "results/{celltype}/patient-level_predictions.csv"
+	params:
+		"{celltype}"
+	log:
+		"results/{celltype}/scgeneranger.log"
+	conda:
+		"envs/scrf_env.yaml"
+	script:
+		"scripts/scgeneranger.R"
+
+rule prep_data_for_scDeepFeatures:
+	input:
+		"data/{celltype}/data_split.RData",
+		config["train_seurat_obj"]
+	output:
+		"data/{celltype}/data_for_scDeepFeatures.h5",
+		"data/{celltype}/renamed_labels_for_scDeepFeatures.csv"
+	params:
+		"{celltype}"
+	log:
+		"data/{celltype}/prep_data_for_scDeepFeatures.log"
+	conda:
+		"envs/seurat_to_h5_env.yaml"
+	script:
+		"scripts/prep_data_for_scDeepFeatures.R"
+
+rule DeepLift:
+    input:
+        data="data/{celltype}/data_for_scDeepFeatures.h5",
+        labels="data/{celltype}/renamed_labels_for_scDeepFeatures.csv"
+    output: 
+        "results/{celltype}/DeepLift/DeepLift.0.AD.csv",
+        "results/{celltype}/DeepLift/DeepLift.1.HC.csv"
+    params:
+        outdir="results/{celltype}/DeepLift/",
+        script=config["scDeepFeatures"]
+    log:
+        "results/{celltype}/deeplift.log"
+    conda:
+        "envs/fsdl_env.yaml"
+    shell:
+        """
+        python {params.script}\
+         --method DeepLift\
+         --train_data {input.data}\
+         --train_label {input.labels}\
+         --test_data {input.data}\
+         --test_label {input.labels}\
+         --only_pos "nope"\
+         --save_fs_eachcell {params.outdir} > {log} 2>&1
+        """
+
+rule FeatureAblation:
+    input:
+        data="data/{celltype}/data_for_scDeepFeatures.h5",
+        labels="data/{celltype}/renamed_labels_for_scDeepFeatures.csv"
+    output:
+        "results/{celltype}/FeatureAblation/FeatureAblation.0.AD.csv",
+        "results/{celltype}/FeatureAblation/FeatureAblation.1.HC.csv"
+    params:
+        outdir="results/{celltype}/FeatureAblation/",
+        script=config["scDeepFeatures"]
+    log:
+        "results/{celltype}/featureablation.log"
+    conda:
+        "envs/fsdl_env.yaml"
+    shell:
+        """
+        python {params.script}\
+         --method FeatureAblation\
+         --train_data {input.data}\
+         --train_label {input.labels}\
+         --test_data {input.data}\
+         --test_label {input.labels}\
+         --only_pos "nope"\
+         --save_fs_eachcell {params.outdir} > {log} 2>&1
+        """
+
+rule train_model_with_DeepLift_features:
+	input:
+		feature_ranking = "results/{celltype}/DeepLift/DeepLift.0.AD.csv",
+		data_split = "data/{celltype}/data_split.RData",
+		seu_obj = config["train_seurat_obj"],
+		test_obj = config["test_seurat_obj"],
+		scGR_selection = "results/{celltype}/selected_genes_and_performance.csv"
+	output:
+		"results/{celltype}/DeepLift_features_and_performance.csv",
+		"results/{celltype}/DeepLift_donor_predictions.csv"
+	params:
+		"{celltype}"
+	log:
+		"results/{celltype}/logs/train_model_with_DeepLift_features.log"
+	threads:
+		10
+	conda:
+		"envs/scrf_env.yaml"
+	script:
+		"scripts/train_model_with_DeepLift_features.R"
+
+rule train_model_with_FeatureAblation_features:
+	input:
+		feature_ranking = "results/{celltype}/FeatureAblation/FeatureAblation.0.AD.csv",
+		data_split = "data/{celltype}/data_split.RData",
+		seu_obj = config["train_seurat_obj"],
+		test_obj = config["test_seurat_obj"],
+		scGR_selection = "results/{celltype}/selected_genes_and_performance.csv",
+	output:
+		"results/{celltype}/FeatureAblation_features_and_performance.csv",
+		"results/{celltype}/FeatureAblation_donor_predictions.csv"
+	params:
+		"{celltype}"
+	log:
+		"results/{celltype}/logs/train_model_with_FeatureAblation_features.log"
+	threads:
+		10
+	conda:
+		"envs/scrf_env.yaml"
+	script:
+		"scripts/train_model_with_FeatureAblation_features.R"
+
+rule aggregate_results:
+	input:
+		scGR_defaultconfig = expand("results/{celltype}/selected_genes_and_performance.csv", celltype = config["celltypes"]),
+		DeepLift = expand("results/{celltype}/DeepLift_features_and_performance.csv", celltype = config["celltypes"]),
+		FeatureAblation = expand("results/{celltype}/FeatureAblation_features_and_performance.csv", celltype = config["celltypes"])
+	output:
+		"results/method_performance_comparison_results.csv"
+	conda:
+		"envs/scrf_env.yaml"
+	script:
+		"scripts/aggregate_results.R"
+
+rule add_optimal_k_to_results:
+	input:
+		scGR_defaultconfig = expand("results/{celltype}/scgeneranger.log", celltype = config["celltypes"]),
+		DeepLift = expand("results/{celltype}/logs/train_model_with_DeepLift_features.log", celltype = config["celltypes"]),
+		FeatureAblation = expand("results/{celltype}/logs/train_model_with_FeatureAblation_features.log", celltype = config["celltypes"]),
+		results_df = "results/method_performance_comparison_results.csv"
+	output:
+		"results/method_performance_comparison_results_with_optimal_k.csv"
+	conda:
+		"envs/scrf_env.yaml"
+	script:
+		"scripts/add_optimal_k_to_results.R"

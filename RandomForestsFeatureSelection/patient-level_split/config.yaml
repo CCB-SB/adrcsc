@@ -1,0 +1,58 @@
+train_patients_seurat_obj:
+  "/home/twolff/ADRC_FS_and_prediction/data/AD/seu_female_train_patients.rds"  # Donors (SCMD) = [
+                                                                               # "0638", "0752", "1042", "1085", "0632", "0146", "0600", "0545", "0500", "0617", "0646", "0749",
+                                                                               # "0750", "0685", "0705", "0675", "0645", "0786", "0788", "0790", "0450", "0381", "0808", "0716",
+                                                                               # "0812", "0816", "0822", "0656", "0846", "0855", "0857", "0842", "0860", "0877", "0904", "0898+0736",
+                                                                               # "0913", "0932", "0946", "0978", "1001", "1007", "1052", "1070", "1081", "1086", "1092", "1110",
+                                                                               # "1112", "1114", "1120", "1134", "1157", "1162", "1166", "1173", "1180", "1203", "1229", "1236",
+                                                                               # "1238", "1206", "1242", "1256", "1269", "1272", "1278"]
+
+test_patients_seurat_obj:
+  "/home/twolff/ADRC_FS_and_prediction/data/AD/seu_female_test_patients.rds" # Donors (SCMD) = [
+                                                                             # "0875", "0909", "0912", "1168", "1172", "1225", "0659", "0738", "0687", "0340", 
+                                                                             # "0770", "0781", "0652", "0801", "0821", "0865", "1100", "1111", "1176", "1217", 
+                                                                             # "1235", "1241"]
+
+annotation_slot:
+  "L2"
+
+donor_slot:
+  "SCMD"
+
+class_of_interest:
+  "Diagnosis"
+
+label_of_interest:
+  "Alzheimer's disease"
+
+celltypes:
+  #Plasma_cell:
+  #  name: 'Plasma cell' 
+  CD4T_cell:
+   name: 'CD4+ T cell' 
+  B:
+   name: 'B cell' 
+  Monocyte:
+    name: 'Monocyte' 
+  NKT-like_cell:
+    name: 'NKT-like cell' 
+  CD8T_cell:
+    name: 'CD8+ T cell' 
+  #ProliferatingTcell:
+  #  name: 'Proliferating T cell' 
+  #DC:
+  #  name: 'Dendritic cell' 
+  #HSPC_or_Progenitors:
+  #  name: 'HSPC/Progenitors' 
+  #Megacaryocytes:
+  #  name: 'Megacaryocytes' 
+  NK:
+   name: 'NK cell' 
+  #RBC:
+  #  name: 'Red Blood Cells'
+
+scDeepFeatures:
+  "/local/twolff/scGeneRanger/scDeepFeatures/Utils/Feature_selection_methods/Mlp/main.py"
+
+DEGs:
+  "data/RandomForest_DEGs_Train_PatientSplit.csv"
