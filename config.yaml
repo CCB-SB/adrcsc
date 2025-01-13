@@ -1,0 +1,71 @@
+results_dir: "results"
+
+enrichment:
+    categories:
+        - GO_-_Biological_Process
+        - GO_-_Cellular_Component
+        - GO_-_Molecular_Function
+        - KEGG_-_Pathways
+        - Reactome_-_Pathways
+        - WikiPathways
+    enrich_groups:
+        - celltype
+
+#genetrail3:
+#    categories: data/genetrail3/genetrail3_webserver_categories.csv
+#    dge_categories: data/genetrail3/dge_enrichment_categories.subset.txt
+
+genetrail3:
+    categories: data/genetrail3_webserver_categories.csv
+    dge_categories: data/dge_enrichment_categories.txt
+    sessionkey: e7e2c1da-ccc1-44b8-bb7e-1d715b94f68c
+    organism: 9606
+
+
+classification:
+    comparisons:
+        - Diagnosis:
+            g1: ["Alzheimer's disease"]
+            g2: ["Healthy Control"]
+        - Diagnosis:
+            g1: ["Parkinson's Disease only"]
+            g2: ["Healthy Control"]
+        - Diagnosis:
+            g1: ["Alzheimer's disease", "Parkinson's Disease only"]
+            g2: ["Healthy Control"]
+        - Diagnosis:
+            g1: ["Mild Cognitive Impairment"]
+            g2: ["Healthy Control"]
+        - Diagnosis:
+            g1: ["Mild Cognitive Impairment", "Parkinson's Disease with MCI"]
+            g2: ["Healthy Control"]
+        - Diagnosis:
+            g1: ["Parkinson's Disease with MCI"]
+            g2: ["Healthy Control"]
+        - Diagnosis:
+            g1: ["Alzheimer's disease"]
+            g2: ["Mild Cognitive Impairment"]
+        - Diagnosis:
+            g1: ["Parkinson's Disease only"]
+            g2: ["Mild Cognitive Impairment"]
+        - Diagnosis:
+            g1: ["Alzheimer's disease", "Parkinson's Disease only"]
+            g2: ["Mild Cognitive Impairment"]
+        - Diagnosis:
+            g1: ["Alzheimer's disease"]
+            g2: ["Mild Cognitive Impairment", "Parkinson's Disease with MCI"]
+        - Diagnosis:
+            g1: ["Parkinson's Disease only"]
+            g2: ["Mild Cognitive Impairment", "Parkinson's Disease with MCI"]
+        - Diagnosis:
+            g1: ["Alzheimer's disease", "Parkinson's Disease only"]
+            g2: ["Mild Cognitive Impairment", "Parkinson's Disease with MCI"]
+
+
+diagnosis_mapping:
+    "Alzheimer's disease": "AD"
+    "Healthy Control": "HC"
+    "Parkinson's Disease only": "PD"
+    "Parkinson's Disease with MCI": "PDMCI"
+    "Mild Cognitive Impairment": "MCI"
+

@@ -1,0 +1,16 @@
+This is the repository of the code used to generate the plots of the paper "A single-cell atlas to map sex-specific gene-expression changes in blood upon neurodegeneration".
+
+To run the analysis and create the plots
+
+1) For the male and female subset: 
+run analysis/include_celltype_proportion.R
+run analysis/correlate_clinical_measures.R 
+run analysis/PrepareData_Figure2_be.R and analysis/scCODA.py
+run the Snakemake pipeline
+
+2) for ROSMAP data: 
+run the Snakemake pipeline
+
+3) run all scripts in Create_Plots
+
+

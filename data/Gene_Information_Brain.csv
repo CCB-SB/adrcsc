@@ -1,0 +1,40 @@
+gene,Category,Reference,Transcriptionfactor
+TRG-AS1,AD-general,https://pmc.ncbi.nlm.nih.gov/articles/PMC9168642/,No
+ZNF212,Not reported,,No
+GON4L,Not reported,,No
+IQGAP2,BBB and Immune,https://pubmed.ncbi.nlm.nih.gov/38645082/,No
+CYTOR,Not reported,,No
+CXCR4,AD-general,https://pmc.ncbi.nlm.nih.gov/articles/PMC6057706/,No
+CD74,Immune response,https://link.springer.com/article/10.1186/1750-1326-3-13  https://link.springer.com/article/10.1007/s00011-016-0995-1,No
+CD37,Plaques,https://pmc.ncbi.nlm.nih.gov/articles/PMC3792655/,No
+FOSB,Cognition,https://pubmed.ncbi.nlm.nih.gov/28700937/,Yes
+RBM3,Not reported,,No
+PMAIP1,Mitochondrium,https://pubmed.ncbi.nlm.nih.gov/38692009/,No
+ITGB2-AS1,Inflammation,https://pubmed.ncbi.nlm.nih.gov/36672701/,No
+CYTH4,Not reported,,No
+LILRB1,Microglia,https://www.medrxiv.org/content/10.1101/2022.07.12.22277557v3,No
+IFI16,Immune response,https://pmc.ncbi.nlm.nih.gov/articles/PMC7108898/,No
+HLA-DQB1,AD-general,https://www.nature.com/articles/s41514-023-00131-3,No
+RHOH,Microglia,https://www.nature.com/articles/s41588-022-01024-z,No
+ARL4C,Not reported,,No
+HBB,AD-general,https://www.sciencedirect.com/science/article/pii/S0531556519303110#s0085,No
+SLAMF7,Not reported,,No
+SCML4,Not reported,,No
+VIM,Astrocytes,https://pubmed.ncbi.nlm.nih.gov/25731615/,No
+ANXA1,Inflammation,https://link.springer.com/article/10.1186/s12974-016-0692-6,No
+MCUB,Mitochondrium,https://alz-journals.onlinelibrary.wiley.com/doi/10.1002/alz.074250,No
+JUNB,Not reported,,Yes
+FAU,Not reported,,No
+RPL18,Ribosome,https://pubmed.ncbi.nlm.nih.gov/35766008/,No
+LYN,AD-general,https://pubmed.ncbi.nlm.nih.gov/30540497/    https://pubmed.ncbi.nlm.nih.gov/31951107/,No
+HBA2,AD-general,https://www.sciencedirect.com/science/article/pii/S0531556519303110#s0085,No
+RRBP1,AD-general,https://pubmed.ncbi.nlm.nih.gov/31951107/,No
+HBA1,AD-general,https://www.sciencedirect.com/science/article/pii/S0531556519303110#s0085,No
+FTH1,Astrocytic Ferroptosis,https://pubmed.ncbi.nlm.nih.gov/36297287/,No
+ATP5MC3,AD-general,KEGG pathway,No
+SAT1,Astrocytic Ferroptosis,https://pubmed.ncbi.nlm.nih.gov/36297287/,No
+FYB1,AD-general,https://pubmed.ncbi.nlm.nih.gov/38612641/,No
+NBPF14,Not reported,,No
+LGALS1,Microglia/Immune,https://www.sciencedirect.com/science/article/pii/S2211124723007969,No
+CTSW,Immune response,https://pmc.ncbi.nlm.nih.gov/articles/PMC9666759/  https://alz-journals.onlinelibrary.wiley.com/doi/10.1002/alz.13847,No
+CD7,Immune response,https://pmc.ncbi.nlm.nih.gov/articles/PMC8281057/,No

@@ -1,0 +1,35 @@
+ID,Abbr
+cDC1,cDC1
+cDC2,cDC2
+CD16 Monocytes,CD16+ Monocyte
+Megacaryocytes,Megacaryocytes
+Plasmablasts,Plasmablasts
+CD14 Monocytes,CD14+ Monocyte
+Th1/Th2/Th17 cell,Th CD4+ T
+"CD56-Dim, CD16 NK cell",CD56- NK
+M-Memory B cell,M-Memory B
+Proliferating Monocytes,Prolif. Monocyte
+CD8+ Tem T cell,Tem CD8+ T
+DN B cell,DN B
+CD4+ Proliferating T cell,Prolif. CD4+ T
+CD56-Bright NK cell,CD56+ NK
+Naive CD4+ T cell,Naive CD4+ T
+HSPC / Progenitor TO_DELETE,HSPC
+CD8+ T cell,CD8+ T
+Treg CD4+ cell,Treg CD4+ T
+Transitional B cell,Transitional B
+Naive B cell,Naive B
+CD4+ Proliferating,Prolif. CD4+ T
+C-Memory B cell,C-Memory B
+Naive CD8+ T cell,Naive CD8+ T
+CD4+ Tcm/Tscm T cell,Tcm/Tscm CD4+ T
+CD8+ Tcm T cell,Tcm CD8+ T
+CD4+ Tem cell,Tem CD4+ T
+CD8+ Tte T cell,Tte CD8+ T
+Proliferating T cell,Prolif. T
+CD4+ Tcm T cell,Tcm CD4+ T
+CD4+ Tfh cell,Tfh CD4+ T
+NKT-like cell,NKT-like
+pDC cell,pDC
+Red Blood Cells,RBC
+DN1 B cell,DN1 B

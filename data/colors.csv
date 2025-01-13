@@ -1,0 +1,128 @@
+ID,Color
+Alzheimer's disease,#ff7f00
+AD,#ff7f00
+Healthy Control,#33a02c
+HC,#33a02c
+Mild Cognitive Impairment,#e31a1c
+MCI,#e31a1c
+Parkinson's Disease with MCI,#91003f
+PD-MCI,#91003f
+Parkinson's Disease,#6a3d9a
+Parkinson's Disease only,#6a3d9a
+PD,#6a3d9a
+Diseased,#1f78b4
+Cognitive Impairment,#a6cee3
+CI,#a6cee3
+NK cell,#e76f51
+CD4+ T cell,#e9c46a
+CD8+ T cell,#f4a261
+B cell,#457b9d
+NKT-like cell,#a8dadc
+Plasma cell,#1d3557
+Monocyte,#34c5b5
+Mucosal associated invariant T cell,#228176
+Dendritic cell,#15514a
+Megacaryocytes,#82ded3
+Gamma delta T cell,#e6e6e6
+Male,#5D7322
+Female,#9C489A
+ADvsHC,#ff7f00
+MCIvsHC,#e31a1c
+PDvsHC,#6a3d9a
+PDMCIvsHC,#91003f
+CIvsHC,#a6cee3
+NDvsHC,#1f78b4
+ADvsPC,#a6611a
+ADvsMCI,#2C33A0
+PDvsMCI,#33A02C
+CD4+ T-Helper Cell,#e9c46a
+Naive CD4+ T cell,#e9c46a
+CD4+ Memory T cell,#e9c46a
+Gamma delta T cell,#e6e6e6
+Mucosal associated invariant T cell,#228176
+CD8+ Memory T cell,#f4a261
+Naive CD8+ T cell,#f4a261
+Proliferating CD8+ T cell,#f4a261
+Memory B cell,#457b9d
+Double negative B cell,#457b9d
+Naive B cell,#457b9d
+B cell,#457b9d
+Transitional B cell,#457b9d
+Conventional Dendritic cell,#15514a
+CD16+ Monocyte,#34c5b5
+Megacaryocytes,#82ded3
+Proliferating Monocytes,#34c5b5
+CD14+ Monocyte,#34c5b5
+Plasmacytoid Dendritic cell,#15514a
+NKT-like cell,#a8dadc
+Proliferating CD4+ T cell ,#e9c46a
+Plasmablasts,#1d3557
+CD56-Dim NK cell,#e76f51
+CD56-Bright NK cell,#e76f51
+male_old,#E64B35FF
+female_old,#4DBBD5FF
+CD4+ regulatory T cell,#e9c46a
+Follicular helper CD4 T cell,#e9c46a
+Naive CD4+ T cells,#e9c46a
+CD4+ T-Helper 17 Cell,#e9c46a
+CD4+ transitional memory T cell,#e9c46a
+CD4+ central memory T cell,#e9c46a
+CD4+ T-Helper 2 Cell,#e9c46a
+CD4+ T-Helper 1 Cell,#e9c46a
+Terminal effector CD4+ T cell,#e9c46a
+CD4+ effector memory T cell,#e9c46a
+CD8+ Terminal effector T cell,#f4a261
+CD8+ stem cell memory T cell,#f4a261
+CD8+ effector memory T cell,#f4a261
+Naive CD8+ T cell,#f4a261
+CD8+ central memory T cell,#f4a261
+Proliferating CD8+ T cell,#f4a261
+IgM Memory B cell,#457b9d
+Double negative 1 B cell,#457b9d
+Double negative 2 B cell,#457b9d
+Classical Memory B cell,#457b9d
+Naive B cell,#457b9d
+B cell,#457b9d
+Transitional B cell,#457b9d
+Double negative 3 B cell,#457b9d
+Double negative 4 B cell,#457b9d
+Conventional Dendritic cell Type 2,#15514a
+Conventional Dendritic cell Type 1,#15514a
+Proliferating CD4+ T cell,#e9c46a
+CD56- Natural Killer cell,#e76f51
+CD56+ Natural Killer cell,#e76f51
+male,#5D7322
+female,#9C489A
+cDC1,#15514a
+cDC2,#15514a
+CD16 Monocytes,#34c5b5
+Megacaryocytes,#82ded3
+DN1 B cell,#457b9d
+CD14 Monocytes,#34c5b5
+Th1/Th2/Th17 cell,#e9c46a
+"CD56-Dim, CD16 NK cell",#e76f51
+M-Memory B cell,#457b9d
+Proliferating Monocytes,#34c5b5
+CD8+ Tem T cell,#f4a261
+DN B cell,#457b9d
+CD4+ Proliferating T cell,#e9c46a
+CD56-Bright NK cell,#e76f51
+Naive CD4+ T cell,#e9c46a
+HSPC / Progenitor TO_DELETE,#808080
+CD8+ T cell,#f4a261
+Treg CD4+ cell,#e9c46a
+Transitional B cell,#457b9d
+Naive B cell,#457b9d
+CD4+ Proliferating,#e9c46a
+C-Memory B cell,#457b9d
+Naive CD8+ T cell,#f4a261
+CD4+ Tcm/Tscm T cell,#e9c46a
+CD8+ Tcm T cell,#f4a261
+CD4+ Tem cell,#e9c46a
+CD8+ Tte T cell,#f4a261
+Proliferating T cell,#A9A9A9
+CD4+ Tcm T cell,#e9c46a
+CD4+ Tfh cell,#e9c46a
+NKT-like cell,#a8dadc
+pDC cell,#15514a
+Red Blood Cells,#808080
